@@ -1,0 +1,7 @@
+{
+  "name": "desert-workshop-promo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Registro PWA de la promo Liguilla Apertura 2026 de Desert Workshop",
+  "engines": { "node": ">=18" }
+}
