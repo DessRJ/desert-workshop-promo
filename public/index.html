@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Desert Workshop · Promo Liguilla Apertura 2026</title>
+  <meta name="description" content="Regístrate gratis y, si el Santos califica a la liguilla, congelas 30% de descuento en Pulido y Encerado Premium.">
+  <meta name="theme-color" content="#008066">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="/icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Desert Workshop">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="top">
+    <img src="/icons/mark-white.png" alt="" width="34" height="38" class="top__mark">
+    <div>
+      <p class="top__name">Desert Workshop</p>
+      <p class="top__tag">La séptima ya descansa aquí</p>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="titulo">
+    <p class="hero__kicker">Promo Liguilla Apertura 2026</p>
+    <h1 id="titulo">
+      <span class="hero__num" aria-label="30 por ciento">30<small>%</small></span>
+      <span class="hero__title">de descuento en Pulido y Encerado</span>
+    </h1>
+    <p class="hero__copy">
+      Si el Santos califica a la liguilla, congelas tu precio.
+      Regístrate gratis antes del <strong>21 de noviembre</strong>.
+    </p>
+  </section>
+
+  <main class="sheet">
+
+    <!-- FORMULARIO -->
+    <section id="vista-form" aria-labelledby="form-titulo">
+      <h2 id="form-titulo" class="sheet__title">Aparta tu descuento</h2>
+
+      <form id="promoForm" novalidate>
+        <!-- Honeypot anti-bots: los humanos no lo ven -->
+        <div class="hp" aria-hidden="true">
+          <label>No llenar este campo <input type="text" name="sitio" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="field">
+          <label for="nombre">Tu nombre completo</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required maxlength="80" aria-describedby="err-nombre">
+          <p class="err" id="err-nombre" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">Tu WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national"
+                 placeholder="871 123 4567" required aria-describedby="hint-wa err-whatsapp">
+          <p class="hint" id="hint-wa">10 dígitos. Aquí te mandamos tu folio.</p>
+          <p class="err" id="err-whatsapp" role="alert"></p>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="vehiculo">Marca y modelo</label>
+            <input id="vehiculo" name="vehiculo" type="text" placeholder="Mazda 3" required maxlength="60" aria-describedby="err-vehiculo">
+            <p class="err" id="err-vehiculo" role="alert"></p>
+          </div>
+          <div class="field field--anio">
+            <label for="anio">Año</label>
+            <input id="anio" name="anio" type="number" inputmode="numeric" placeholder="2022" min="1980" required aria-describedby="err-anio">
+            <p class="err" id="err-anio" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="check">
+            <input id="acepta" name="acepta" type="checkbox" required aria-describedby="err-acepta">
+            <span>Acepto que Desert Workshop me escriba por WhatsApp para confirmar mi registro.</span>
+          </label>
+          <p class="err" id="err-acepta" role="alert"></p>
+        </div>
+
+        <p class="err err--form" id="err-form" role="alert"></p>
+
+        <button type="submit" class="btn" id="btn-enviar">Registrar mi auto</button>
+      </form>
+
+      <details class="privacy">
+        <summary>Cómo usamos tus datos</summary>
+        <p>Guardamos tu nombre, WhatsApp y los datos de tu auto solo para confirmar esta promoción y contactarte sobre tu servicio. No los vendemos ni los compartimos. Para borrarlos, escríbenos por WhatsApp.</p>
+      </details>
+    </section>
+
+    <!-- BOLETO (después de registrar) -->
+    <section id="vista-ticket" hidden aria-live="polite">
+      <article class="ticket">
+        <div class="ticket__top">
+          <p class="ticket__label" id="t-estado">Registro recibido</p>
+          <p class="ticket__folio" id="t-folio">DW-XXXXXX</p>
+          <p class="ticket__hint" id="t-hint">Toma captura de este folio.</p>
+        </div>
+        <div class="ticket__cut" aria-hidden="true"></div>
+        <div class="ticket__bottom">
+          <dl>
+            <div><dt>Nombre</dt><dd id="t-nombre"></dd></div>
+            <div><dt>Auto</dt><dd id="t-auto"></dd></div>
+            <div><dt>Servicio</dt><dd>Pulido y Encerado Premium, 30% de descuento</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <p class="ticket__note" id="t-nota">
+        Te escribimos por WhatsApp para confirmar. Tu descuento se activa en cuanto el Santos entre a la liguilla.
+      </p>
+
+      <a class="btn btn--wa" id="btn-wa" href="#" hidden target="_blank" rel="noopener">Escribirnos por WhatsApp</a>
+      <button type="button" class="btn btn--ghost" id="btn-otro">Registrar otro auto</button>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="steps" aria-labelledby="pasos-titulo">
+      <h2 id="pasos-titulo" class="sheet__title sheet__title--sm">Cómo funciona</h2>
+      <ol>
+        <li><span><strong>Te registras</strong> con los datos de tu auto. Es gratis.</span></li>
+        <li><span><strong>Te confirmamos</strong> por WhatsApp con tu folio.</span></li>
+        <li><span><strong>Si el Santos entra a la liguilla</strong>, tu 30% se activa solo.</span></li>
+      </ol>
+      <p class="steps__fine">Solo participan los autos registrados antes de que ruede el balón en la Jornada 17 (21 de noviembre vs. León).</p>
+    </section>
+
+    <button type="button" class="install" id="btn-instalar" hidden>Instalar la app en mi celular</button>
+  </main>
+
+  <footer class="foot">
+    &copy; 2026 Desert Workshop. Promoción válida solo en La Laguna, previa confirmación.
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

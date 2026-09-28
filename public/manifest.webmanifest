@@ -1,0 +1,17 @@
+{
+  "name": "Desert Workshop · Promo Santos",
+  "short_name": "Desert Workshop",
+  "description": "Registra tu auto y congela 30% de descuento en Pulido y Encerado si el Santos entra a la liguilla.",
+  "lang": "es-MX",
+  "start_url": "/?o=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#008066",
+  "theme_color": "#008066",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
